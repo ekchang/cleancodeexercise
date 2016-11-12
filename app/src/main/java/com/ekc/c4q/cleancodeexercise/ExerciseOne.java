@@ -4,12 +4,12 @@ package com.ekc.c4q.cleancodeexercise;
 public class ExerciseOne {
     // Clean up the class below
 
-    public class config {
-        public static final String mBaseUrl = "www.github.com";
+    public class Config {
+        public static final String M_BASE_URL = "www.github.com";
 
-        config config;
+        Config config;
 
-        public config GetConfiguration() {
+        public Config getConfiguration() {
             return config;
         }
     }

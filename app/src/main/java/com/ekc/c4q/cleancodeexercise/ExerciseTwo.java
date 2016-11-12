@@ -12,68 +12,64 @@ import java.util.List;
 
 public class ExerciseTwo {
     // Clean up the code below
-    public class Answer extends AppCompatActivity {
-        List<String> PreviousFunctions;
+    public class AnswerActivity extends AppCompatActivity {
+        List<String> previousFunctions; // or mPreviousFunctions
 
         @Override
         protected void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
-            PreviousFunctions = new ArrayList<>();
+            previousFunctions = new ArrayList<>();
+        }
+
+        /**
+         * We didn't need all of those methods: it was a lot of repeat code and all that changed
+         * was the fragment.
+         */
+        private void showFragment(Fragment fragment) {
+            FragmentManager fragmentManager = getSupportFragmentManager();
+            FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+            fragmentTransaction.replace(R.id.container, fragment);
+            fragmentTransaction.commit();
         }
 
         private void showAlpha() {
-            FragmentManager fragmentManager = getSupportFragmentManager();
-            FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-            fragmentTransaction.replace(R.id.container, new Alpha());
-            fragmentTransaction.commit();
+            showFragment(new AlphaFragment());
         }
 
         private void showBeta() {
-            FragmentManager fragmentManager = getSupportFragmentManager();
-            FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-            fragmentTransaction.replace(R.id.container, new Beta());
-            fragmentTransaction.commit();
+            showFragment(new BetaFragment());
         }
 
         private void showGamma() {
-            FragmentManager fragmentManager = getSupportFragmentManager();
-            FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-            fragmentTransaction.replace(R.id.container, new Gamma());
-            fragmentTransaction.commit();
+            showFragment(new GammaFragment());
         }
 
         private void showDelta() {
-            FragmentManager fragmentManager = getSupportFragmentManager();
-            FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-            fragmentTransaction.replace(R.id.container, new delta());
-            fragmentTransaction.commit();
+            showFragment(new DeltaFragment());
         }
 
         private void showEpsilon() {
-            FragmentManager fragmentManager = getSupportFragmentManager();
-            FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-            fragmentTransaction.replace(R.id.container, new EPSILON());
-            fragmentTransaction.commit();
+            showFragment(new EpsilonFragment());
         }
     }
 
-    public static class Alpha extends Fragment {
+    public static class AlphaFragment extends Fragment {
 
     }
 
-    public static class Beta extends Fragment {
+    public static class BetaFragment extends Fragment {
 
     }
 
-    public static class Gamma extends Fragment {
+    public static class GammaFragment extends Fragment {
 
     }
 
-    public static class delta extends Fragment {
+    public static class DeltaFragment extends Fragment {
 
     }
 
-    public static class EPSILON extends Fragment {
+    public static class EpsilonFragment extends Fragment {
 
     }
 }
