@@ -5,7 +5,7 @@ public class ExerciseOne {
     // Clean up the class below
 
     public class Config {
-        public static final String M_BASE_URL = "www.github.com";
+        public static final String BASE_URL = "www.github.com";
 
         Config config;
 
